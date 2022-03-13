@@ -49,7 +49,10 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import DataLoader, RandomSampler, SequentialSampler, Dataset
 from torch.utils.data.distributed import DistributedSampler
+import torch.multiprocessing
 import amp_C
+
+torch.multiprocessing.set_sharing_strategy('file_system')
 
 import apex_C
 from apex import amp
